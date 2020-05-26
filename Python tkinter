@@ -1,0 +1,20 @@
+#Write a Python program that creates a GUI with a textbox, Ok button and Quit button. On clicking Ok, 
+the text entered in textbox is to be printed in Python shell; on clicking Quit, the program should terminate.
+
+import tkinter as tk
+from tkinter import ttk
+
+win = tk.Tk()  # Application Name
+win.title("Python GUI App")  
+lbl = ttk.Label(win, text="Enter the text:").grid(column=0, row=0)  # Click event
+
+
+def click():
+    print( name.get())  # Textbox widget
+
+
+name = tk.StringVar()
+nameEntered = ttk.Entry(win, width=12, textvariable=name).grid(column=0, row=1)  # Button widget
+button = ttk.Button(win, text="Ok", command=click).grid(column=1, row=1)
+button = ttk.Button(win,  text = "Quit", command=win.destroy).grid(column=1, row=2)
+win.mainloop()
